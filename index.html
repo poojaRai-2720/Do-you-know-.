@@ -1,203 +1,217 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Do you know? | Your Online Library</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<title>Do you know? | A World of Stories</title>
 
 <style>
 :root {
-  --bg:#faf9ff;
+  --bg:#fffaff;
   --surface:#ffffff;
-  --text:#302b48;
-  --muted:#827c98;
-  --primary:#8b78d9;
-  --pink:#f4a8c8;
-  --blue:#b7d9f8;
-  --lav:#eae4ff;
-  --border:#eee9f7;
-  --shadow:0 8px 28px rgba(80,65,130,.08);
+  --text:#292943;
+  --muted:#8989a6;
+  --blue:#6d9cff;
+  --pink:#f49ac2;
+  --purple:#a99af5;
+  --border:#eeeafa;
+  --shadow:0 5px 25px rgba(95,75,150,.09);
 }
 body.dark {
-  --bg:#15152c;
-  --surface:#22223f;
-  --text:#f3edff;
-  --muted:#b4accd;
-  --primary:#ad9aff;
-  --pink:#ff9fc9;
-  --blue:#8ebeff;
-  --lav:#35335e;
-  --border:#393653;
-  --shadow:0 8px 28px rgba(0,0,0,.22);
+  --bg:#111326;
+  --surface:#1d2039;
+  --text:#f5f2ff;
+  --muted:#aaaac8;
+  --blue:#60b8ff;
+  --pink:#ff91c9;
+  --purple:#b5a2ff;
+  --border:#343650;
+  --shadow:0 5px 25px rgba(0,0,0,.25);
 }
 *{box-sizing:border-box}
 body{
   margin:0;background:var(--bg);color:var(--text);
-  font-family:'DM Sans',sans-serif;transition:.25s;
+  font-family: 'Segoe UI',Arial,sans-serif;
+  transition:.25s;
 }
 button,input{font:inherit}
 button{cursor:pointer}
 header{
   position:sticky;top:0;z-index:20;
-  display:flex;align-items:center;gap:20px;
-  padding:15px 5%;background:var(--surface);
-  border-bottom:1px solid var(--border);
+  background:var(--surface);border-bottom:1px solid var(--border);
+  padding:13px 4%;display:flex;align-items:center;gap:18px;
 }
-.logo{
-  font-family:'Playfair Display',serif;font-size:26px;
-  font-weight:700;color:var(--primary);white-space:nowrap;
-}
-.logo span{color:var(--pink)}
+.logo{font-size:25px;font-weight:850;white-space:nowrap;
+  color:var(--pink);letter-spacing:-1px}
+.logo span{color:var(--blue)}
 .search{
-  flex:1;display:flex;align-items:center;
+  flex:1;display:flex;align-items:center;gap:10px;
   background:var(--bg);border:1px solid var(--border);
-  border-radius:30px;padding:0 17px;min-width:80px;
+  border-radius:30px;padding:0 17px;
 }
 .search input{
-  width:100%;padding:13px 8px;background:transparent;
-  border:0;outline:0;color:var(--text);
+  width:100%;padding:13px 0;border:0;outline:0;
+  background:transparent;color:var(--text);
 }
-.nav-actions{display:flex;align-items:center;gap:10px}
+.nav-actions{display:flex;gap:9px;align-items:center}
+.btn{
+  border:0;border-radius:25px;padding:11px 18px;
+  font-weight:650;background:var(--blue);color:white;
+}
+.btn:hover{filter:brightness(1.07);transform:translateY(-1px)}
+.btn.secondary{background:var(--bg);color:var(--text);
+  border:1px solid var(--border)}
+.btn.pink{background:var(--pink);color:#fff}
 .icon-btn{
-  border:0;background:var(--bg);color:var(--text);
-  padding:11px 13px;border-radius:50px;
+  border:0;border-radius:50%;width:42px;height:42px;
+  background:var(--bg);color:var(--text);font-size:19px;
 }
-.primary-btn{
-  background:var(--primary);color:white;border:0;
-  padding:12px 19px;border-radius:25px;font-weight:700;
-}
-.primary-btn:hover{opacity:.85}
+main{max-width:1500px;margin:auto;padding:25px 4% 60px}
 .hero{
-  margin:30px 5%;padding:55px 6%;
-  background:linear-gradient(120deg,#e9e2ff,#dceeff,#ffdfed);
-  border-radius:28px;display:flex;align-items:center;
-  justify-content:space-between;gap:20px;overflow:hidden;
+  min-height:245px;border-radius:27px;padding:35px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:20px;overflow:hidden;
+  background:linear-gradient(115deg,#e9e9ff,#ffe4f0,#dceeff);
+  color:#303052;position:relative;
 }
-.dark .hero{
-  background:linear-gradient(120deg,#292751,#303e75,#563b65);
+body.dark .hero{
+  background:linear-gradient(115deg,#29294f,#49304f,#193d5b);
+  color:white;
 }
-.hero h1{
-  font-family:'Playfair Display',serif;font-size:clamp(34px,5vw,55px);
-  color:#514577;margin:0 0 15px;
+.hero h1{font-size:clamp(30px,5vw,48px);margin:0 0 12px}
+.hero p{font-size:16px;line-height:1.7;max-width:560px}
+.hero-art{font-size:100px;filter:drop-shadow(0 10px 12px #aaa)}
+.hero .btn{margin-top:8px}
+.section-head{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:12px;margin:35px 0 18px;
 }
-.dark .hero h1{color:#f2eaff}
-.hero p{max-width:510px;color:#625b79;line-height:1.8}
-.dark .hero p{color:#e0d8f5}
-.hero-art{font-size:105px;min-width:120px;text-align:center}
-.section{padding:15px 5% 30px}
-.section-heading{
-  display:flex;justify-content:space-between;
-  align-items:center;gap:10px;flex-wrap:wrap;
-}
-h2{font-family:'Playfair Display',serif;font-size:27px}
+.section-head h2{font-size:24px;margin:0}
+.muted{color:var(--muted)}
 .categories{
-  display:flex;gap:10px;flex-wrap:wrap;margin:17px 0 25px;
+  display:flex;gap:10px;overflow-x:auto;padding:5px 0 12px;
 }
 .category{
-  border:1px solid var(--border);background:var(--surface);
-  color:var(--text);padding:10px 18px;border-radius:25px;
+  flex-shrink:0;border:1px solid var(--border);
+  background:var(--surface);color:var(--text);
+  border-radius:25px;padding:10px 19px;font-weight:600;
 }
-.category.active{background:var(--primary);color:white}
+.category.active,.category:hover{
+  background:var(--blue);color:white;border-color:var(--blue);
+}
+.story-banner{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:20px;padding:18px;box-shadow:var(--shadow);
+}
+.story-row{display:flex;gap:17px;overflow-x:auto}
+.story{
+  min-width:90px;text-align:center;cursor:pointer;
+}
+.story-circle{
+  width:76px;height:76px;border-radius:50%;
+  margin:auto auto 8px;padding:4px;
+  background:linear-gradient(135deg,var(--pink),var(--blue),var(--purple));
+}
+.story-circle img{
+  width:100%;height:100%;object-fit:cover;border-radius:50%;
+  border:3px solid var(--surface);
+}
+.story small{font-weight:600;color:var(--muted)}
 .masonry{
-  columns:4 210px;column-gap:20px;
+  columns:4 220px;column-gap:19px;
 }
-.book{
-  display:inline-block;width:100%;break-inside:avoid;
-  margin:0 0 20px;background:var(--surface);
-  border-radius:18px;overflow:hidden;box-shadow:var(--shadow);
-  transition:transform .2s;position:relative;
+.book-card{
+  break-inside:avoid;margin-bottom:20px;
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:19px;overflow:hidden;box-shadow:var(--shadow);
+  transition:.2s;
 }
-.book:hover{transform:translateY(-5px)}
-.cover{
-  min-height:205px;display:flex;align-items:center;
-  justify-content:center;flex-direction:column;
-  padding:25px;text-align:center;color:white;
-  position:relative;overflow:hidden;
+.book-card:hover{transform:translateY(-4px)}
+.cover{position:relative;cursor:pointer}
+.cover img{width:100%;display:block;object-fit:cover;
+  min-height:170px;max-height:340px}
+.fav{
+  position:absolute;top:11px;right:11px;
+  background:#fff;color:#ed77a8;border:0;
+  border-radius:50%;width:38px;height:38px;font-size:20px;
 }
-.cover .emoji{font-size:55px;margin-bottom:12px}
-.cover strong{font-family:'Playfair Display',serif;font-size:22px}
-.cover small{margin-top:8px;opacity:.9}
-.c1{background:linear-gradient(145deg,#7466b5,#c09adf)}
-.c2{background:linear-gradient(145deg,#f5b6cb,#d985aa)}
-.c3{background:linear-gradient(145deg,#395b83,#87b5da)}
-.c4{background:linear-gradient(145deg,#d68d65,#f1c58e)}
-.c5{background:linear-gradient(145deg,#426c67,#a5bfa2)}
-.c6{background:linear-gradient(145deg,#534b83,#a9a1e5)}
-.c7{background:linear-gradient(145deg,#a36a92,#e6a8be)}
-.c8{background:linear-gradient(145deg,#34455d,#788ca9)}
-.c9{background:linear-gradient(145deg,#8b619c,#d3a6e6)}
-.book-info{padding:15px}
-.book-info h3{font-size:16px;margin:0 0 6px}
-.book-info p{font-size:12px;color:var(--muted);line-height:1.6;margin:0 0 12px}
-.book-bottom{display:flex;justify-content:space-between;align-items:center;gap:5px}
-.tag{font-size:11px;color:var(--primary);background:var(--lav);padding:6px 10px;border-radius:15px}
-.book-actions{display:flex;gap:5px}
-.small-btn{
-  background:var(--bg);border:0;color:var(--text);
-  border-radius:12px;padding:8px 10px;
+.book-info{padding:14px}
+.book-info h3{margin:0 0 6px;font-size:17px}
+.book-info p{font-size:13px;color:var(--muted);line-height:1.5}
+.book-meta{display:flex;justify-content:space-between;
+  align-items:center;gap:6px;font-size:12px}
+.tag{background:var(--bg);padding:5px 9px;border-radius:15px;
+  color:var(--purple);font-weight:700}
+.read-btn{
+  background:var(--blue);color:white;border:0;
+  border-radius:20px;padding:8px 14px;font-size:12px;
 }
-.heart{font-size:17px}
-.heart.saved{color:#f078a9}
-.empty{text-align:center;padding:50px;color:var(--muted)}
+.empty{text-align:center;padding:40px;color:var(--muted)}
 footer{
-  text-align:center;padding:35px 15px;
-  border-top:1px solid var(--border);color:var(--muted);
+  padding:35px 5%;text-align:center;
+  background:var(--surface);border-top:1px solid var(--border);
+  color:var(--muted);line-height:1.8;
 }
-footer b{color:var(--primary)}
+footer strong{color:var(--pink)}
+/* Modals */
 .modal{
-  display:none;position:fixed;inset:0;background:#0009;
-  z-index:50;align-items:center;justify-content:center;padding:15px;
+  display:none;position:fixed;inset:0;z-index:50;
+  background:rgba(12,12,35,.65);
+  align-items:center;justify-content:center;padding:15px;
 }
 .modal.show{display:flex}
 .modal-box{
-  background:var(--surface);padding:28px;border-radius:24px;
-  width:min(440px,100%);max-height:90vh;overflow:auto;
-  box-shadow:var(--shadow);
+  width:min(480px,100%);max-height:90vh;overflow-y:auto;
+  background:var(--surface);border-radius:24px;
+  padding:27px;position:relative;box-shadow:var(--shadow);
 }
-.modal-box h2{margin-top:0}
 .close{
-  float:right;border:0;background:var(--bg);
-  color:var(--text);border-radius:50%;padding:8px 12px;
+  position:absolute;right:17px;top:13px;border:0;
+  background:var(--bg);color:var(--text);
+  border-radius:50%;width:34px;height:34px;font-size:20px;
 }
-.modal-box input{
-  width:100%;padding:13px;margin:8px 0 13px;
-  border-radius:12px;border:1px solid var(--border);
+.modal-box h2{margin:5px 0 8px;text-align:center}
+.modal-box .subtitle{text-align:center;color:var(--muted)}
+.auth-input{
+  width:100%;padding:13px 15px;margin:8px 0;
+  border:1px solid var(--border);border-radius:12px;
   background:var(--bg);color:var(--text);outline:none;
 }
-.full{width:100%;margin:6px 0}
+.auth-input:focus{border-color:var(--blue)}
+.full{width:100%;margin:9px 0}
 .social{
-  padding:12px;border:1px solid var(--border);
-  background:var(--bg);color:var(--text);
-  border-radius:12px;width:100%;margin:5px 0;
+  width:100%;margin:6px 0;padding:12px;
+  border:1px solid var(--border);border-radius:12px;
+  background:var(--surface);color:var(--text);font-weight:650;
 }
-.social:hover{border-color:var(--primary)}
-.switch{text-align:center;color:var(--muted);font-size:13px;margin-top:15px}
-.switch a{color:var(--primary);cursor:pointer;font-weight:700}
-#userArea{display:flex;align-items:center;gap:8px;font-size:13px}
-#readerText{white-space:pre-line;line-height:1.9;color:var(--muted)}
-#toast{
-  position:fixed;bottom:20px;left:50%;transform:translateX(-50%);
-  background:var(--text);color:var(--surface);
-  padding:13px 22px;border-radius:25px;display:none;z-index:100;
-  max-width:90%;text-align:center;
+.social:hover{background:var(--bg)}
+.switch{text-align:center;font-size:14px;margin-top:16px}
+.switch a{color:var(--blue);cursor:pointer;font-weight:700}
+.divider-text{text-align:center;color:var(--muted);margin:12px}
+.message{text-align:center;color:var(--pink);font-size:13px;min-height:20px}
+.reader-image{width:100%;height:180px;object-fit:cover;
+  border-radius:15px}
+.reader-text{line-height:1.85;white-space:pre-line}
+.user-pill{font-size:13px;color:var(--pink);font-weight:700}
+@media(max-width:750px){
+ header{flex-wrap:wrap;gap:10px}
+ .logo{font-size:22px}
+ .search{order:3;flex-basis:100%}
+ .nav-actions{margin-left:auto}
+ .hero{padding:25px;min-height:220px}
+ .hero-art{font-size:65px}
+ main{padding:20px 4% 45px}
+ .masonry{columns:2 145px;column-gap:12px}
+ .book-card{margin-bottom:12px}
+ .book-info{padding:10px}
+ .book-info h3{font-size:14px}
+ .book-info p{font-size:12px}
+ .section-head h2{font-size:20px}
 }
-@media(max-width:650px){
-  header{padding:12px 3%;gap:8px;flex-wrap:wrap}
-  .logo{font-size:21px}
-  .search{order:3;flex-basis:100%}
-  .nav-actions{margin-left:auto}
-  .hero{margin:18px 3%;padding:30px 6%}
-  .hero-art{font-size:65px;min-width:65px}
-  .section{padding-left:3%;padding-right:3%}
-  .masonry{columns:2 145px;column-gap:12px}
-  .book{margin-bottom:12px}
-  .cover{min-height:170px}
-}
-@media(max-width:370px){
-  .masonry{columns:1}
+@media(max-width:390px){
+ .masonry{columns:1}
+ .hero-art{display:none}
 }
 </style>
 </head>
@@ -208,462 +222,507 @@ footer b{color:var(--primary)}
   <div class="logo">Do you <span>know?</span> ✨</div>
 
   <div class="search">
-    🔍 <input id="searchInput" type="search"
-      placeholder="Search stories, books, adventures..."
+    🔍 <input id="searchInput"
+      placeholder="Search stories, authors, adventures..."
       oninput="renderBooks()">
   </div>
 
   <div class="nav-actions">
     <button class="icon-btn" onclick="toggleTheme()" title="Change theme">🌙</button>
-    <button class="icon-btn" onclick="showFavorites()">♡</button>
-    <div id="userArea">
-      <button class="primary-btn" onclick="openAuth()">Login</button>
-    </div>
+    <button class="icon-btn" onclick="showFavorites()" title="Favorites">♡</button>
+    <button class="btn" id="authButton" onclick="openAuth()">Sign in</button>
   </div>
 </header>
 
+<main>
+
 <section class="hero">
-  <div>
-    <h1>Every book holds<br>a little magic. ✨</h1>
-    <p>
-      Welcome to your little corner of imagination.
-      Discover magical worlds, solve mysterious crimes,
-      and find beautiful stories waiting for you.
-    </p>
-    <button class="primary-btn" onclick="scrollToBooks()">
-      Explore Library →
-    </button>
-  </div>
-  <div class="hero-art">📚🪄</div>
+ <div>
+   <div style="font-weight:800;color:var(--pink)">YOUR LITTLE STORY UNIVERSE ✨</div>
+   <h1>Every story has a little magic.</h1>
+   <p>
+    Escape into magical kingdoms, solve mysterious crimes,
+    and discover beautiful stories. Your next favourite book
+    is waiting for you!
+   </p>
+   <button class="btn pink" onclick="scrollToBooks()">Explore stories →</button>
+ </div>
+ <div class="hero-art">📚🤖💗</div>
 </section>
 
-<section class="section" id="library">
-  <div class="section-heading">
-    <h2>Explore your library ♡</h2>
-    <span style="color:var(--muted);font-size:13px">
-      A universe of stories awaits you
-    </span>
-  </div>
+<div class="section-head">
+ <h2>Explore your imagination 🌈</h2>
+</div>
 
-  <div class="categories">
-    <button class="category active" onclick="setCategory('All',this)">All books</button>
-    <button class="category" onclick="setCategory('Fantasy',this)">🧚 Fantasy</button>
-    <button class="category" onclick="setCategory('Children',this)">🧸 Children</button>
-    <button class="category" onclick="setCategory('Detective',this)">🔎 Detective</button>
-    <button class="category" onclick="setCategory('Favorites',this)">💗 Favorites</button>
-  </div>
+<div class="categories" id="categories">
+ <button class="category active" onclick="filterCategory('All',this)">✨ All stories</button>
+ <button class="category" onclick="filterCategory('Fantasy',this)">🪄 Fantasy</button>
+ <button class="category" onclick="filterCategory('Children',this)">🧸 Children's stories</button>
+ <button class="category" onclick="filterCategory('Detective',this)">🔎 Detective</button>
+ <button class="category" onclick="filterCategory('Mystery',this)">🌙 Mystery</button>
+ <button class="category" onclick="filterCategory('Adventure',this)">🗺️ Adventure</button>
+</div>
 
-  <div class="masonry" id="bookGrid"></div>
+<section class="story-banner">
+ <div class="section-head" style="margin:3px 0 18px">
+  <h2>Little story moments 💕</h2>
+  <span class="muted">Discover something new</span>
+ </div>
+ <div class="story-row">
+  <div class="story" onclick="openBook(1)">
+   <div class="story-circle">
+    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=200" alt="Magic forest">
+   </div><small>Magic world</small>
+  </div>
+  <div class="story" onclick="openBook(2)">
+   <div class="story-circle">
+    <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=200" alt="Fairy tale">
+   </div><small>Fairy tales</small>
+  </div>
+  <div class="story" onclick="openBook(3)">
+   <div class="story-circle">
+    <img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=200" alt="Books">
+   </div><small>Little readers</small>
+  </div>
+  <div class="story" onclick="openBook(4)">
+   <div class="story-circle">
+    <img src="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=200" alt="Mystery">
+   </div><small>Dark secrets</small>
+  </div>
+  <div class="story" onclick="openBook(5)">
+   <div class="story-circle">
+    <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=200" alt="Books">
+   </div><small>Detective time</small>
+  </div>
+ </div>
 </section>
+
+<div class="section-head" id="bookSection">
+ <div>
+  <h2 id="sectionTitle">Stories waiting for you 📖</h2>
+  <div class="muted" style="font-size:13px;margin-top:5px">
+   A collection of little worlds and big adventures.
+  </div>
+ </div>
+ <span class="muted" id="bookCount"></span>
+</div>
+
+<div class="masonry" id="bookGrid"></div>
+
+</main>
 
 <footer>
-  <h2>Do you know? ♡</h2>
-  <p>Read a little. Dream a lot. Discover endlessly.</p>
-  <p>Made with <b>♥</b> for book lovers everywhere.</p>
-  <small>© 2026 Do you know? | Your little online library</small>
+ <div style="font-size:25px">📚 💗 ✨</div>
+ <h2 style="color:var(--text)">Do you know?</h2>
+ <p>Where imagination finds its home.</p>
+ <p>Made with <strong>♥</strong> for every book lover.</p>
+ <small>© 2026 Do you know? | Your little story universe</small>
 </footer>
 
-<!-- AUTHENTICATION MODAL -->
-<div class="modal" id="authModal">
+<!-- AUTH MODAL -->
+<div class="modal" id="authModal" onclick="outsideClose(event,'authModal')">
  <div class="modal-box">
-  <button class="close" onclick="closeModal('authModal')">✕</button>
-  <h2 id="authTitle">Welcome back! 💗</h2>
-  <p style="color:var(--muted);font-size:13px">
-    Your next adventure starts here.
-  </p>
+  <button class="close" onclick="closeModal('authModal')">×</button>
+  <div style="text-align:center;font-size:43px">🤖💗</div>
+  <h2 id="authTitle">Welcome, little reader!</h2>
+  <p class="subtitle" id="authSubtitle">Sign in and enter your story universe.</p>
 
-  <form id="authForm">
-    <input id="authName" placeholder="Your name" style="display:none">
-    <input id="authEmail" type="email" placeholder="Email address" required>
-    <input id="authPassword" type="password" placeholder="Password (minimum 6 characters)" minlength="6" required>
-    <button class="primary-btn full" type="submit" id="authSubmit">Login</button>
+  <form id="authForm" onsubmit="handleAuth(event)">
+   <input class="auth-input" id="authName" placeholder="Your name"
+    style="display:none">
+   <input class="auth-input" id="authEmail" type="email"
+    placeholder="Email address" required>
+   <input class="auth-input" id="authPassword" type="password"
+    placeholder="Password" minlength="6" required>
+   <button class="btn full" id="authSubmit">Sign in ✨</button>
   </form>
 
-  <button class="social" onclick="socialLogin('google')">🌐 Continue with Google</button>
-  <button class="social" onclick="socialLogin('facebook')">f Continue with Facebook</button>
-  <button class="social" onclick="socialLogin('linkedin')">in Continue with LinkedIn</button>
+  <div class="message" id="authMessage"></div>
+  <div class="divider-text">— OR CONTINUE WITH —</div>
 
-  <button class="social" onclick="resetPassword()">Forgot password?</button>
+  <button class="social" onclick="socialLogin('Google')">🌐 Continue with Google</button>
+  <button class="social" onclick="socialLogin('Facebook')">ⓕ Continue with Facebook</button>
+  <button class="social" onclick="socialLogin('LinkedIn')">in Continue with LinkedIn</button>
 
   <div class="switch" id="authSwitch">
-    Don't have an account?
-    <a onclick="changeAuthMode('signup')">Sign up</a>
+   New here? <a onclick="switchAuth('signup')">Create an account</a>
   </div>
-  <p style="font-size:11px;color:var(--muted);text-align:center">
-    Secure authentication powered by Firebase.
+  <p class="muted" style="font-size:11px;text-align:center;margin-top:16px">
+   Demo authentication only. Connect a secure authentication provider
+   before using real accounts.
   </p>
  </div>
 </div>
 
 <!-- READER MODAL -->
-<div class="modal" id="readerModal">
+<div class="modal" id="readerModal" onclick="outsideClose(event,'readerModal')">
  <div class="modal-box">
-  <button class="close" onclick="closeModal('readerModal')">✕</button>
-  <h2 id="readerTitle"></h2>
-  <p id="readerCategory" style="color:var(--primary)"></p>
-  <div id="readerText"></div>
-  <button class="primary-btn full" onclick="closeModal('readerModal')">
-    Close book ♡
-  </button>
+  <button class="close" onclick="closeModal('readerModal')">×</button>
+  <img class="reader-image" id="readerImage" src="" alt="Story cover">
+  <h2 id="readerTitle" style="text-align:left;margin-top:18px"></h2>
+  <p class="muted" id="readerAuthor"></p>
+  <div class="reader-text" id="readerText"></div>
+  <p class="muted" style="font-size:12px">
+   This is an original sample story for the website demonstration.
+  </p>
  </div>
 </div>
 
-<div id="toast"></div>
-
 <script>
+// BOOK COLLECTION
 const books = [
- {
- id:1,title:"The Enchanted Forest",category:"Fantasy",
- emoji:"🧚",cover:"c1",author:"Luna Rose",
- description:"A girl discovers a secret forest where every tree has a story.",
- story:"Once upon a time, in a village hidden between silver mountains, lived a curious girl named Elara. One evening, she followed a trail of glowing butterflies into a forest no map had ever shown. The trees whispered her name, and a tiny fairy appeared with a golden key. 'The forest has been waiting for you,' the fairy said. And so began Elara's greatest adventure..."
- },
- {
- id:2,title:"The Little Star",category:"Children",
- emoji:"⭐",cover:"c2",author:"Mia Bloom",
- description:"A tiny star learns that being different makes her special.",
- story:"High above the clouds lived a little star named Twinkle. Unlike the other stars, she glowed in pink and blue. She often wondered why she was different. One night, a lost bird followed her colourful light home. Twinkle finally understood that her difference was her greatest gift."
- },
- {
- id:3,title:"The Silent Footsteps",category:"Detective",
- emoji:"🔎",cover:"c3",author:"A. Morgan",
- description:"A mysterious disappearance leads to a surprising discovery.",
- story:"At exactly midnight, the museum alarm rang. The priceless Moonstone had disappeared, yet every door was locked. Detective Aria noticed something unusual: a trail of tiny silver footprints beneath the display case. Everyone had overlooked them. She followed the clues and discovered that the greatest mystery was hiding in plain sight..."
- },
- {
- id:4,title:"Kingdom of Dreams",category:"Fantasy",
- emoji:"🏰",cover:"c4",author:"Evelyn Hart",
- description:"A forgotten kingdom, a brave princess and an ancient prophecy.",
- story:"In a kingdom where dreams could become real, Princess Mira found an old book beneath the palace library. Its pages contained a prophecy about a kingdom lost to time. With a map, a little courage and a magical compass, Mira stepped beyond the palace gates..."
- },
- {
- id:5,title:"The Brave Little Rabbit",category:"Children",
- emoji:"🐰",cover:"c5",author:"Oliver Woods",
- description:"A small rabbit discovers the meaning of true courage.",
- story:"Pip was the smallest rabbit in the meadow. He was afraid of thunder, tall trees and even butterflies. But when his friend got lost during a storm, Pip took a deep breath and stepped into the forest. He discovered that courage isn't about having no fear. It's about helping someone even when you are afraid."
- },
- {
- id:6,title:"The Midnight Letter",category:"Detective",
- emoji:"✉️",cover:"c6",author:"E. Winters",
- description:"An anonymous letter reveals a secret hidden for twenty years.",
- story:"The letter arrived at 11:59 PM. No stamp, no address, only seven words: 'Look beneath the clock that never ticks.' Inspector Noah knew the old railway station had been abandoned for decades. But someone had left a clue there, and the truth was closer than he imagined..."
- },
- {
- id:7,title:"The Dragon's Promise",category:"Fantasy",
- emoji:"🐉",cover:"c7",author:"Sophie Vale",
- description:"A young explorer befriends a dragon everyone fears.",
- story:"Everyone in the village feared the mountain dragon. But when young Rowan climbed the mountain, he found not a monster, but a lonely dragon guarding an ancient promise. Their friendship would change the kingdom forever."
- },
- {
- id:8,title:"Cloud Nine Adventures",category:"Children",
- emoji:"☁️",cover:"c8",author:"Lily Moon",
- description:"Two best friends discover a city floating above the clouds.",
- story:"Milo and Emma built a cardboard airplane in their backyard. One magical morning, it lifted off and carried them above the clouds. There they discovered Cloud Nine, a city filled with candy gardens, friendly giants and flying libraries."
- },
- {
- id:9,title:"The Last Clue",category:"Detective",
- emoji:"🕵️",cover:"c9",author:"James Reed",
- description:"Three suspects. One missing diamond. A detective's final puzzle.",
- story:"Three people had entered the mansion before the diamond vanished. Each had a perfect alibi. Detective Vera examined the room again and noticed a reflection in the grandfather clock. It revealed something nobody had thought to look for..."
- }
+{
+ id:1,title:"The Kingdom of Forgotten Stars",
+ author:"Luna Rose",category:"Fantasy",
+ emoji:"✨",image:"https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=700",
+ description:"A magical kingdom, a forgotten prophecy and a girl who can talk to stars.",
+ text:`Once upon a time, beyond the seven silver mountains, there was a kingdom where stars fell asleep in the trees.
+
+A young girl named Elara discovered that she could hear their whispers.
+
+One evening, a tiny blue star landed on her windowsill.
+
+"Please," it whispered, "the sky is forgetting us."
+
+Elara picked up her lantern, opened the ancient map, and stepped into a world that nobody had visited for a thousand years.
+
+She did not know it yet, but the fate of the entire kingdom rested in her hands...`
+},
+{
+ id:2,title:"The Little Dragon Who Couldn't Fly",
+ author:"Mia Bloom",category:"Children",
+ emoji:"🐉",image:"https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=700",
+ description:"A tiny dragon discovers that being different is its greatest strength.",
+ text:`In a valley full of flying dragons lived a little dragon named Pip.
+
+Every dragon could fly except Pip.
+
+He tried jumping from hills, flapping his wings, and even asking the butterflies for lessons.
+
+Nothing worked.
+
+One rainy afternoon, a baby bird fell from its nest.
+
+Pip carefully climbed the tallest tree and rescued it.
+
+That day he learned something wonderful: you don't need to fly to be a hero.`
+},
+{
+ id:3,title:"The Library Behind the Moon",
+ author:"Ava Winters",category:"Fantasy",
+ emoji:"🌙",image:"https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=700",
+ description:"A secret library holds every story that has ever been dreamed.",
+ text:`At midnight, a mysterious staircase appeared behind Mira's bedroom mirror.
+
+At the top was a library floating among the stars.
+
+Its librarian was a little robot with glowing blue eyes.
+
+"Every book here is a dream someone forgot," it said.
+
+Mira reached for a silver book with her name on it.
+
+The pages were blank.
+
+Then, slowly, the first sentence appeared:
+
+"Tonight, your adventure begins..." `
+},
+{
+ id:4,title:"The Secret of Blackwood House",
+ author:"Arthur Grey",category:"Detective",
+ emoji:"🔎",image:"https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=700",
+ description:"A locked room, a missing painting and three suspicious guests.",
+ text:`Detective Oliver arrived at Blackwood House at exactly nine.
+
+A priceless painting had disappeared from a locked room.
+
+There were three suspects: the gardener, the housekeeper, and the owner's nephew.
+
+The windows were locked. The door had no signs of damage.
+
+Oliver examined the dusty floor and smiled.
+
+"Interesting," he whispered. "The thief made one tiny mistake."
+
+What was it? A single wet footprint led toward the fireplace...`
+},
+{
+ id:5,title:"The Clockmaker's Mystery",
+ author:"E. J. Carter",category:"Mystery",
+ emoji:"⏰",image:"https://images.unsplash.com/photo-1512820790803-83ca734da794?w=700",
+ description:"Every clock in town stops at the same mysterious minute.",
+ text:`At 11:11 every night, the clocks of Willow Street stopped.
+
+Nobody knew why.
+
+Then Noah discovered an old pocket watch hidden inside his grandfather's desk.
+
+Its hands moved backwards.
+
+A tiny message was engraved on the back:
+
+"Time remembers what people forget."
+
+Noah opened the watch.
+
+Somewhere in the town, a bell began to ring...`
+},
+{
+ id:6,title:"The Adventures of Milo",
+ author:"Sophie Lane",category:"Children",
+ emoji:"🧸",image:"https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=700",
+ description:"A curious little boy and his best friend explore a wonderful world.",
+ text:`Milo had a map, a backpack, and a very important mission.
+
+He wanted to find the rainbow waterfall.
+
+His best friend, a little rabbit named Button, came along.
+
+Together they crossed a whispering forest, climbed a hill made of candy-coloured stones, and met a friendly turtle.
+
+The waterfall was more beautiful than any picture Milo had ever seen.
+
+But the best part was having someone to share the adventure with.`
+},
+{
+ id:7,title:"The Last Phoenix",
+ author:"R. A. Moon",category:"Fantasy",
+ emoji:"🔥",image:"https://images.unsplash.com/photo-1511497584788-876760111969?w=700",
+ description:"An ancient firebird may be the last hope of a dying magical world.",
+ text:`The world had forgotten the phoenix.
+
+Its name appeared only in old songs and broken legends.
+
+But in the mountains of Ashenfall, a golden egg began to glow.
+
+A young wanderer found it beneath the ruins of an ancient temple.
+
+When the shell cracked, a tiny flame rose into the sky.
+
+The last phoenix had awakened...`
+},
+{
+ id:8,title:"The Detective's Missing Diary",
+ author:"James Vale",category:"Detective",
+ emoji:"🕵️",image:"https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=700",
+ description:"A mysterious diary reveals clues to a case closed twenty years ago.",
+ text:`Detective Clara found the diary inside an abandoned station.
+
+The first page contained only one sentence:
+
+"I know who took the midnight train."
+
+The final entry was dated twenty years earlier, the same day a famous disappearance had occurred.
+
+Clara turned the page.
+
+A photograph slipped out.
+
+It showed the station, the train, and a familiar face...`
+},
+{
+ id:9,title:"The Paper Boat Adventure",
+ author:"Nina Bell",category:"Adventure",
+ emoji:"⛵",image:"https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=700",
+ description:"A paper boat carries a little girl's wish across an enchanted river.",
+ text:`A rainy afternoon gave Lily an idea.
+
+She folded a paper boat and wrote a wish inside it.
+
+"Find someone who needs a friend."
+
+The river carried it past gardens, bridges and little villages.
+
+Far away, a lonely boy found the boat on the riverbank.
+
+He smiled and wrote a reply.
+
+And so, a beautiful friendship began.`
+}
 ];
 
-let activeCategory="All";
-let favorites=JSON.parse(localStorage.getItem("dyk_favorites")||"[]");
-let mode="login";
+let currentCategory="All";
+let favorites=JSON.parse(localStorage.getItem("dykFavorites")||"[]");
+let favoriteMode=false;
+let authMode="login";
 
-function notify(message){
- const t=document.getElementById("toast");
- t.textContent=message;t.style.display="block";
- clearTimeout(window.toastTimer);
- window.toastTimer=setTimeout(()=>t.style.display="none",2800);
-}
-
+// RENDER BOOKS
 function renderBooks(){
  const query=document.getElementById("searchInput").value.toLowerCase();
  let filtered=books.filter(b=>{
-  const matchCategory=activeCategory==="All"||
-   (activeCategory==="Favorites"?favorites.includes(b.id):b.category===activeCategory);
-  const matchSearch=(b.title+" "+b.category+" "+b.author+" "+b.description).toLowerCase().includes(query);
-  return matchCategory&&matchSearch;
+  const matchesCategory=currentCategory==="All"||b.category===currentCategory;
+  const matchesSearch=(b.title+" "+b.author+" "+b.category+" "+b.description)
+   .toLowerCase().includes(query);
+  const matchesFavorite=!favoriteMode||favorites.includes(b.id);
+  return matchesCategory&&matchesSearch&&matchesFavorite;
  });
- const grid=document.getElementById("bookGrid");
- if(!filtered.length){
-  grid.innerHTML='<div class="empty">No stories found. Try another search! 🌸</div>';
-  return;
- }
- grid.innerHTML=filtered.map(b=>`
-  <article class="book">
-   <div class="cover ${b.cover}">
-    <div class="emoji">${b.emoji}</div>
-    <strong>${b.title}</strong>
-    <small>by ${b.author}</small>
+
+ document.getElementById("bookCount").textContent=filtered.length+" stories";
+ document.getElementById("sectionTitle").textContent=
+  favoriteMode?"Your favourite stories 💗":"Stories waiting for you 📖";
+
+ document.getElementById("bookGrid").innerHTML=filtered.length?
+ filtered.map(b=>`
+ <article class="book-card">
+  <div class="cover" onclick="openBook(${b.id})">
+   <img src="${b.image}" alt="${b.title}" loading="lazy">
+   <button class="fav" aria-label="Favourite"
+    onclick="event.stopPropagation();toggleFavorite(${b.id})">
+    ${favorites.includes(b.id)?"♥":"♡"}
+   </button>
+  </div>
+  <div class="book-info">
+   <h3>${b.emoji} ${b.title}</h3>
+   <p>${b.description}</p>
+   <div class="book-meta">
+    <span class="tag">${b.category}</span>
+    <button class="read-btn" onclick="openBook(${b.id})">Read sample →</button>
    </div>
-   <div class="book-info">
-    <h3>${b.title}</h3>
-    <p>${b.description}</p>
-    <div class="book-bottom">
-     <span class="tag">${b.category}</span>
-     <div class="book-actions">
-      <button class="small-btn heart ${favorites.includes(b.id)?"saved":""}"
-       onclick="toggleFavorite(${b.id})" title="Save favourite">
-       ${favorites.includes(b.id)?"♥":"♡"}
-      </button>
-      <button class="small-btn" onclick="readBook(${b.id})">Read →</button>
-     </div>
-    </div>
-   </div>
-  </article>
- `).join("");
+   <p>By ${b.author}</p>
+  </div>
+ </article>`).join("")
+ :'<div class="empty">🌸 No stories found. Try another search!</div>';
 }
 
-function setCategory(category,button){
- activeCategory=category;
+// CATEGORY FILTER
+function filterCategory(category,button){
+ currentCategory=category;
+ favoriteMode=false;
  document.querySelectorAll(".category").forEach(b=>b.classList.remove("active"));
  button.classList.add("active");
  renderBooks();
 }
+
+// FAVORITES
 function toggleFavorite(id){
- if(favorites.includes(id))favorites=favorites.filter(x=>x!==id);
- else favorites.push(id);
- localStorage.setItem("dyk_favorites",JSON.stringify(favorites));
+ if(favorites.includes(id)){
+  favorites=favorites.filter(x=>x!==id);
+ }else{
+  favorites.push(id);
+ }
+ localStorage.setItem("dykFavorites",JSON.stringify(favorites));
  renderBooks();
 }
 function showFavorites(){
- activeCategory="Favorites";
+ favoriteMode=!favoriteMode;
+ currentCategory="All";
  document.querySelectorAll(".category").forEach(b=>b.classList.remove("active"));
- document.querySelectorAll(".category").forEach(b=>{
-  if(b.textContent.includes("Favorites"))b.classList.add("active");
- });
- scrollToBooks();renderBooks();
+ document.querySelector('.category').classList.toggle("active",!favoriteMode);
+ renderBooks();
+ document.getElementById("bookSection").scrollIntoView({behavior:"smooth"});
 }
-function scrollToBooks(){
- document.getElementById("library").scrollIntoView({behavior:"smooth"});
-}
-function readBook(id){
+
+// READER
+function openBook(id){
  const b=books.find(x=>x.id===id);
+ if(!b)return;
+ document.getElementById("readerImage").src=b.image;
  document.getElementById("readerTitle").textContent=b.emoji+" "+b.title;
- document.getElementById("readerCategory").textContent=b.category+" • By "+b.author;
- document.getElementById("readerText").textContent=b.story;
+ document.getElementById("readerAuthor").textContent="By "+b.author+" • "+b.category;
+ document.getElementById("readerText").textContent=b.text;
  document.getElementById("readerModal").classList.add("show");
 }
+function scrollToBooks(){
+ document.getElementById("bookSection").scrollIntoView({behavior:"smooth"});
+}
+
+// THEME
 function toggleTheme(){
  document.body.classList.toggle("dark");
- localStorage.setItem("dyk_theme",document.body.classList.contains("dark")?"dark":"light");
+ const dark=document.body.classList.contains("dark");
+ localStorage.setItem("dykTheme",dark?"dark":"light");
+ document.querySelector(".icon-btn").textContent=dark?"☀️":"🌙";
 }
-if(localStorage.getItem("dyk_theme")==="dark")document.body.classList.add("dark");
+if(localStorage.getItem("dykTheme")==="dark"){
+ document.body.classList.add("dark");
+ document.querySelector(".icon-btn").textContent="☀️";
+}
 
-function openAuth(){
- document.getElementById("authModal").classList.add("show");
-}
+// MODALS
 function closeModal(id){
  document.getElementById(id).classList.remove("show");
 }
-function changeAuthMode(newMode){
- mode=newMode;
+function outsideClose(event,id){
+ if(event.target.id===id)closeModal(id);
+}
+function openAuth(){
+ document.getElementById("authModal").classList.add("show");
+}
+function switchAuth(mode){
+ authMode=mode;
  const signup=mode==="signup";
- document.getElementById("authTitle").textContent=signup?"Create your account ✨":"Welcome back! 💗";
+ document.getElementById("authTitle").textContent=signup?"Create your account 💗":"Welcome back, reader!";
+ document.getElementById("authSubtitle").textContent=signup?"Join our little universe of stories.":"Sign in and continue your adventure.";
  document.getElementById("authName").style.display=signup?"block":"none";
  document.getElementById("authName").required=signup;
- document.getElementById("authSubmit").textContent=signup?"Create account":"Login";
+ document.getElementById("authSubmit").textContent=signup?"Create account ✨":"Sign in ✨";
  document.getElementById("authSwitch").innerHTML=signup?
- 'Already have an account? <a onclick="changeAuthMode(\\'login\\')">Login</a>':
- 'Don\\'t have an account? <a onclick="changeAuthMode(\\'signup\\')">Sign up</a>';
-}
-function resetPassword(){
- const email=document.getElementById("authEmail").value;
- if(!email)return notify("Enter your email address first.");
- if(!auth)return notify("Set up Firebase first.");
- sendPasswordResetEmail(auth,email)
-  .then(()=>notify("Password reset email sent! 💌"))
-  .catch(e=>notify(e.message));
-}
-</script>
-
-
-<!-- FIREBASE AUTHENTICATION -->
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/13.3.0/firebase-app.js";
-
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/13.3.0/firebase-analytics.js";
-
-import {
-  getAuth,
-  onAuthStateChanged,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  GoogleAuthProvider,
-  FacebookAuthProvider,
-  OAuthProvider,
-  signInWithPopup,
-  signOut,
-  updateProfile,
-  sendPasswordResetEmail
-} from "https://www.gstatic.com/firebasejs/13.3.0/firebase-auth.js";
-
-// YOUR FIREBASE CONFIGURATION
-const firebaseConfig = {
-  apiKey: "AIzaSyBr3E7qglStok0LJFfXJLGQS0d2fTYqKwM",
-  authDomain: "do-you-know-ba5d2.firebaseapp.com",
-  projectId: "do-you-know-ba5d2",
-  storageBucket: "do-you-know-ba5d2.firebasestorage.app",
-  messagingSenderId: "324928169452",
-  appId: "1:324928169452:web:0b3eaf4963eb844c190cc9",
-  measurementId: "G-BEK329L63V"
-};
-
-// INITIALIZE FIREBASE
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-
-// INITIALIZE ANALYTICS
-try {
-  getAnalytics(app);
-} catch (error) {
-  console.warn("Analytics unavailable:", error);
+ 'Already have an account? <a onclick="switchAuth(\'login\')">Sign in</a>':
+ 'New here? <a onclick="switchAuth(\'signup\')">Create an account</a>';
+ document.getElementById("authMessage").textContent="";
 }
 
-window.auth = auth;
-window.firebaseReady = true;
-window.sendPasswordResetEmail = sendPasswordResetEmail;
+// DEMO AUTHENTICATION
+// Not secure for production. Use Firebase Auth or another provider.
+function handleAuth(event){
+ event.preventDefault();
+ const name=document.getElementById("authName").value.trim();
+ const email=document.getElementById("authEmail").value.trim().toLowerCase();
+ const password=document.getElementById("authPassword").value;
+ const message=document.getElementById("authMessage");
+ let users=JSON.parse(localStorage.getItem("dykUsers")||"[]");
 
-// EMAIL SIGNUP AND LOGIN
-const authForm = document.getElementById("authForm");
-
-authForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  const email = document.getElementById("authEmail").value.trim();
-  const password = document.getElementById("authPassword").value;
-  const name = document.getElementById("authName").value.trim();
-  const submit = document.getElementById("authSubmit");
-
-  submit.disabled = true;
-  submit.textContent = "Please wait...";
-
-  try {
-    if (mode === "signup") {
-      const result = await createUserWithEmailAndPassword(
-        auth, email, password
-      );
-
-      if (name) {
-        await updateProfile(result.user, {
-          displayName: name
-        });
-      }
-
-      notify("Account created successfully! 💗");
-
-    } else {
-      await signInWithEmailAndPassword(auth, email, password);
-      notify("Welcome back! Happy reading! 📚");
-    }
-
-    closeModal("authModal");
-
-  } catch (error) {
-    const messages = {
-      "auth/email-already-in-use": "This email already has an account.",
-      "auth/invalid-email": "Please enter a valid email.",
-      "auth/weak-password": "Password must contain at least 6 characters.",
-      "auth/invalid-credential": "Incorrect email or password.",
-      "auth/popup-closed-by-user": "Sign-in window was closed."
-    };
-
-    notify(messages[error.code] || error.message);
-
-  } finally {
-    submit.disabled = false;
-    submit.textContent =
-      mode === "signup" ? "Create account" : "Login";
+ if(authMode==="signup"){
+  if(users.some(u=>u.email===email)){
+   message.textContent="This email is already registered!";
+   return;
   }
-});
-
-// GOOGLE, FACEBOOK AND LINKEDIN LOGIN
-window.socialLogin = async function(provider) {
-
-  let selectedProvider;
-
-  if (provider === "google") {
-    selectedProvider = new GoogleAuthProvider();
+  users.push({name,email,password});
+  localStorage.setItem("dykUsers",JSON.stringify(users));
+  localStorage.setItem("dykSession",JSON.stringify({name,email}));
+  message.textContent="Account created! Welcome to our library 💗";
+ }else{
+  const user=users.find(u=>u.email===email&&u.password===password);
+  if(!user){
+   message.textContent="Incorrect email or password. Try again!";
+   return;
   }
-
-  if (provider === "facebook") {
-    selectedProvider = new FacebookAuthProvider();
-  }
-
-  if (provider === "linkedin") {
-    selectedProvider = new OAuthProvider("oidc.linkedin");
-  }
-
-  try {
-    await signInWithPopup(auth, selectedProvider);
-
-    closeModal("authModal");
-    notify("Successfully signed in! 💗");
-
-  } catch (error) {
-
-    if (error.code === "auth/unauthorized-domain") {
-      notify("Add your GitHub Pages domain in Firebase Authorized Domains.");
-
-    } else if (error.code === "auth/operation-not-allowed") {
-      notify("Enable this login provider in Firebase Console.");
-
-    } else {
-      notify(error.message);
-    }
-  }
-};
-
-// LOGIN STATE
-onAuthStateChanged(auth, (user) => {
-
-  const area = document.getElementById("userArea");
-
-  if (user) {
-
-    const name = (
-      user.displayName || user.email || "Reader"
-    ).split(" ")[0];
-
-    area.innerHTML = `
-      <span>Hi, ${name}! ♡</span>
-      <button class="icon-btn" onclick="logout()">Logout</button>
-    `;
-
-  } else {
-
-    area.innerHTML = `
-      <button class="primary-btn" onclick="openAuth()">Login</button>
-    `;
-  }
-});
-
-// LOGOUT
-window.logout = async function() {
-  try {
-    await signOut(auth);
-    notify("Logged out successfully!");
-  } catch (error) {
-    notify(error.message);
-  }
-};
-</script>
-
-
-  function resetPassword(){
- const email=document.getElementById("authEmail").value;
-
- if(!email)return notify("Enter your email address first.");
-
- if(!window.auth)return notify("Firebase is not ready yet.");
-
- window.sendPasswordResetEmail(window.auth,email)
-  .then(()=>notify("Password reset email sent! 💌"))
-  .catch(e=>notify(e.message));
+  localStorage.setItem("dykSession",JSON.stringify({
+   name:user.name,email:user.email
+  }));
+  message.textContent="Welcome back, "+user.name+"! ✨";
+ }
+ updateAuthButton();
+ setTimeout(()=>closeModal("authModal"),900);
 }
+
+// SOCIAL LOGIN PLACEHOLDERS
+function socialLogin(provider){
+ alert(provider+" sign-in needs OAuth setup. Connect your "+provider+
+ " developer application through Firebase Authentication to enable real login.");
+}
+
+// USER SESSION UI
+function updateAuthButton(){
+ const session=JSON.parse(localStorage.getItem("dykSession")||"null");
+ const button=document.getElementById("authButton");
+ if(session){
+  button.textContent="Hi, "+session.name.split(" ")[0]+" 👋";
+  button.onclick=logout;
+ }else{
+  button.textContent="Sign in";
+  button.onclick=openAuth;
+ }
+}
+function logout(){
+ localStorage.removeItem("dykSession");
+ updateAuthButton();
+ alert("You have signed out. See you soon! 💗");
+}
+
+updateAuthButton();
+renderBooks();
 </script>
 </body>
 </html>
